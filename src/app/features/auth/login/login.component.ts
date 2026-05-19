@@ -44,7 +44,7 @@ import { AuthService } from '../../../core/auth/auth.service';
             <span>{{ carregando() ? 'Entrando...' : 'Entrar' }}</span>
           </button>
 
-          <button mat-button type="button" (click)="entrarMock()">Entrar com sessão mock local</button>
+          <button mat-button type="button" (click)="entrarMock()">Entrar com sessão Teste</button>
         </form>
       </mat-card>
     </section>
