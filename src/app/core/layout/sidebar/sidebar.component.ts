@@ -13,9 +13,9 @@ import { MatButtonModule } from '@angular/material/button';
       <div class="brand">
         <div class="brand-icon">OB</div>
         <strong *ngIf="!collapsed">Oficina da Bike</strong>
-        <button mat-icon-button class="toggle" (click)="toggle.emit()" aria-label="Expandir ou recolher menu">
-          <mat-icon>{{ collapsed ? 'chevron_right' : 'chevron_left' }}</mat-icon>
-        </button>
+          <button *ngIf="!collapsed" mat-icon-button class="toggle" (click)="toggle.emit()" aria-label="Expandir ou recolher menu">
+              <mat-icon>{{ collapsed ? 'chevron_right' : 'chevron_left' }}</mat-icon>
+          </button>
       </div>
 
       <nav>
@@ -61,7 +61,7 @@ import { MatButtonModule } from '@angular/material/button';
           display: flex;
           align-items: center;
           gap: 12px;
-          padding: 0 18px;
+          padding: 0 20px;
       }
 
       .brand-icon {
@@ -103,13 +103,8 @@ import { MatButtonModule } from '@angular/material/button';
       }
 
       .toggle {
-          margin: auto 16px 16px;
+          margin: auto;
           color: #fff;
-          align-self: flex-end;
-      }
-
-      .collapsed .toggle {
-          align-self: center;
       }
 
       @media (max-width: 768px) {
