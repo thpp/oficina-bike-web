@@ -21,9 +21,26 @@ import { AuthService } from '../../auth/auth.service';
     </header>
   `,
   styles: [`
-    .topbar { height: 64px; display: flex; align-items: center; gap: 12px; padding: 0 24px; background: #fff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 10; }
-    .spacer { flex: 1; }
-    span { color: var(--ob-muted); }
+      .topbar {
+          height: 64px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 0 24px;
+          background: #fff;
+          border-bottom: 1px solid #e5e7eb;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+      }
+
+      .spacer {
+          flex: 1;
+      }
+
+      span {
+          color: var(--ob-muted);
+      }
   `]
 })
 export class TopbarComponent {
