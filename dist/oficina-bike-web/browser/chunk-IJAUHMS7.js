@@ -1,0 +1,1 @@
+import{a as o}from"./chunk-BWE67PE6.js";import"./chunk-IKFNHIDZ.js";import"./chunk-QBDRNMTA.js";import"./chunk-2S67NCTQ.js";var a=[{path:"",loadComponent:()=>import("./chunk-A6UVAQYQ.js").then(t=>t.VendaCadastroComponent),canActivate:[o("VENDA_CRIAR")]}];export{a as VENDA_ROUTES};

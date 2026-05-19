@@ -1,0 +1,55 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$orange-palette,
+  ),
+  typography: (
+    brand-family: 'Inter, Roboto, Arial, sans-serif',
+    plain-family: 'Inter, Roboto, Arial, sans-serif'
+  ),
+  density: (
+    scale: 0
+  )
+));
+
+html {
+  @include mat.all-component-themes($theme);
+}
+
+:root {
+  --ob-primary: #0f3d4c;
+  --ob-primary-dark: #092a35;
+  --ob-accent: #f59e0b;
+  --ob-bg: #f3f6f8;
+  --ob-card: #ffffff;
+  --ob-text: #1f2937;
+  --ob-muted: #6b7280;
+  --ob-success: #16a34a;
+  --ob-error: #dc2626;
+  --ob-info: #38bdf8;
+  --ob-warning: #f59e0b;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { font-family: Inter, Roboto, Arial, sans-serif; background: var(--ob-bg); color: var(--ob-text); }
+
+.ob-page { display: flex; flex-direction: column; gap: 16px; }
+.ob-card { background: var(--ob-card); border-radius: 16px; padding: 16px; box-shadow: 0 8px 24px rgba(15, 61, 76, 0.08); }
+.ob-actions { display: flex; gap: 12px; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
+.ob-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.ob-full { grid-column: 1 / -1; }
+
+.snackbar-success { --mdc-snackbar-container-color: var(--ob-success); --mat-snack-bar-button-color: #fff; }
+.snackbar-error { --mdc-snackbar-container-color: var(--ob-error); --mat-snack-bar-button-color: #fff; }
+.snackbar-warning { --mdc-snackbar-container-color: var(--ob-warning); --mat-snack-bar-button-color: #111827; }
+.snackbar-info { --mdc-snackbar-container-color: var(--ob-info); --mat-snack-bar-button-color: #082f49; }
+
+@media (max-width: 768px) {
+  .ob-form-grid { grid-template-columns: 1fr; }
+}

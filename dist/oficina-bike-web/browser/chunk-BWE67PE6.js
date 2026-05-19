@@ -1,0 +1,1 @@
+import{b as e}from"./chunk-IKFNHIDZ.js";import{c as t}from"./chunk-QBDRNMTA.js";import{ba as r}from"./chunk-2S67NCTQ.js";var u=o=>()=>{let i=r(e),m=r(t);return i.temPermissao(o)?!0:m.createUrlTree(["/produtos"])};export{u as a};
