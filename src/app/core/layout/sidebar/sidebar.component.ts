@@ -19,15 +19,15 @@ import { MatButtonModule } from '@angular/material/button';
       </div>
 
       <nav>
-        <a routerLink="/produtos" routerLinkActive="active">
+        <a routerLink="/produtos" routerLinkActive="active" (click)="itemClick.emit()">
           <mat-icon>inventory_2</mat-icon>
           <span *ngIf="!collapsed">Produtos</span>
         </a>
-        <a routerLink="/clientes" routerLinkActive="active">
+        <a routerLink="/clientes" routerLinkActive="active" (click)="itemClick.emit()">
           <mat-icon>groups</mat-icon>
           <span *ngIf="!collapsed">Clientes</span>
         </a>
-        <a routerLink="/vendas" routerLinkActive="active">
+        <a routerLink="/vendas" routerLinkActive="active" (click)="itemClick.emit()">
           <mat-icon>point_of_sale</mat-icon>
           <span *ngIf="!collapsed">Vendas</span>
         </a>
@@ -128,4 +128,5 @@ import { MatButtonModule } from '@angular/material/button';
 export class SidebarComponent {
   @Input() collapsed = false;
   @Output() toggle = new EventEmitter<void>();
+  @Output() itemClick = new EventEmitter<void>();
 }

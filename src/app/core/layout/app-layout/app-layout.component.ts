@@ -9,7 +9,7 @@ import {TopbarComponent} from '../topbar/topbar.component';
     imports: [RouterOutlet, SidebarComponent, TopbarComponent],
     template: `
         <div class="layout">
-            <ob-sidebar [collapsed]="menuCollapsed" (toggle)="toggleMenu()"/>
+            <ob-sidebar [collapsed]="menuCollapsed" (toggle)="toggleMenu()" (itemClick)="fecharMenuMobile()"/>
             <div class="main">
                 <ob-topbar (menuClick)="toggleMenu()"/>
                 <main class="content">
@@ -43,8 +43,15 @@ import {TopbarComponent} from '../topbar/topbar.component';
 })
 export class AppLayoutComponent {
     menuCollapsed = true;
+    private readonly mobileBreakpoint = 768;
 
     toggleMenu(): void {
         this.menuCollapsed = !this.menuCollapsed;
+    }
+
+    fecharMenuMobile(): void {
+        if (window.innerWidth <= this.mobileBreakpoint) {
+            this.menuCollapsed = true;
+        }
     }
 }
